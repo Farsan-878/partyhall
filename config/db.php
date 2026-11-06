@@ -7,18 +7,20 @@
 // Directory constants
 define('ROOT_DIR', dirname(__DIR__));
 
-$isVercel = (!empty($_ENV['VERCEL']) || !empty($_SERVER['VERCEL']) || getenv('VERCEL'));
-if ($isVercel) {
+// Check if current filesystem is writable or running in a serverless environment like Vercel
+$isServerless = (!empty($_ENV['VERCEL']) || !empty($_SERVER['VERCEL']) || getenv('VERCEL') || !empty($_ENV['AWS_REGION']) || !@is_writable(ROOT_DIR));
+
+if ($isServerless) {
     define('IS_VERCEL', true);
-    define('DATA_DIR', '/tmp/data');
-    define('SESSION_DIR', '/tmp/sessions');
-    define('UPLOADS_DIR', '/tmp/uploads');
+    define('DATA_DIR', sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'partyhall_data');
+    define('SESSION_DIR', sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'partyhall_sessions');
+    define('UPLOADS_DIR', sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'partyhall_uploads');
     define('DB_FILE', DATA_DIR . DIRECTORY_SEPARATOR . 'database.sqlite');
     
     if (!is_dir(DATA_DIR)) {
-        @mkdir(DATA_DIR, 0755, true);
+        @mkdir(DATA_DIR, 0777, true);
     }
-    // Copy bundled seed database if it doesn't exist in /tmp
+    // Copy bundled seed database if it doesn't exist in temp
     $sourceDb = ROOT_DIR . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'database.sqlite';
     if (!file_exists(DB_FILE) && file_exists($sourceDb)) {
         @copy($sourceDb, DB_FILE);
@@ -33,25 +35,27 @@ if ($isVercel) {
 
 // Ensure directories exist
 if (!is_dir(DATA_DIR)) {
-    @mkdir(DATA_DIR, 0755, true);
+    @mkdir(DATA_DIR, 0777, true);
 }
 if (!is_dir(SESSION_DIR)) {
-    @mkdir(SESSION_DIR, 0755, true);
+    @mkdir(SESSION_DIR, 0777, true);
 }
 if (!is_dir(UPLOADS_DIR)) {
-    @mkdir(UPLOADS_DIR, 0755, true);
+    @mkdir(UPLOADS_DIR, 0777, true);
 }
 if (!is_dir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'photos')) {
-    @mkdir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'photos', 0755, true);
+    @mkdir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'photos', 0777, true);
 }
 if (!is_dir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'videos')) {
-    @mkdir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'videos', 0755, true);
+    @mkdir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'videos', 0777, true);
 }
 
 // Ensure session storage works reliably across all environments
 if (session_status() === PHP_SESSION_NONE) {
-    session_save_path(SESSION_DIR);
-    session_start();
+    if (is_dir(SESSION_DIR) && is_writable(SESSION_DIR)) {
+        @session_save_path(SESSION_DIR);
+    }
+    @session_start();
 }
 
 // Base URL detection helper
