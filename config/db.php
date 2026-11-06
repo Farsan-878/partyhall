@@ -6,26 +6,46 @@
 
 // Directory constants
 define('ROOT_DIR', dirname(__DIR__));
-define('DATA_DIR', ROOT_DIR . DIRECTORY_SEPARATOR . 'data');
-define('UPLOADS_DIR', ROOT_DIR . DIRECTORY_SEPARATOR . 'uploads');
-define('DB_FILE', DATA_DIR . DIRECTORY_SEPARATOR . 'database.sqlite');
-define('SESSION_DIR', DATA_DIR . DIRECTORY_SEPARATOR . 'sessions');
+
+$isVercel = (!empty($_ENV['VERCEL']) || !empty($_SERVER['VERCEL']) || getenv('VERCEL'));
+if ($isVercel) {
+    define('IS_VERCEL', true);
+    define('DATA_DIR', '/tmp/data');
+    define('SESSION_DIR', '/tmp/sessions');
+    define('UPLOADS_DIR', '/tmp/uploads');
+    define('DB_FILE', DATA_DIR . DIRECTORY_SEPARATOR . 'database.sqlite');
+    
+    if (!is_dir(DATA_DIR)) {
+        @mkdir(DATA_DIR, 0755, true);
+    }
+    // Copy bundled seed database if it doesn't exist in /tmp
+    $sourceDb = ROOT_DIR . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'database.sqlite';
+    if (!file_exists(DB_FILE) && file_exists($sourceDb)) {
+        @copy($sourceDb, DB_FILE);
+    }
+} else {
+    define('IS_VERCEL', false);
+    define('DATA_DIR', ROOT_DIR . DIRECTORY_SEPARATOR . 'data');
+    define('UPLOADS_DIR', ROOT_DIR . DIRECTORY_SEPARATOR . 'uploads');
+    define('DB_FILE', DATA_DIR . DIRECTORY_SEPARATOR . 'database.sqlite');
+    define('SESSION_DIR', DATA_DIR . DIRECTORY_SEPARATOR . 'sessions');
+}
 
 // Ensure directories exist
 if (!is_dir(DATA_DIR)) {
-    mkdir(DATA_DIR, 0755, true);
+    @mkdir(DATA_DIR, 0755, true);
 }
 if (!is_dir(SESSION_DIR)) {
-    mkdir(SESSION_DIR, 0755, true);
+    @mkdir(SESSION_DIR, 0755, true);
 }
 if (!is_dir(UPLOADS_DIR)) {
-    mkdir(UPLOADS_DIR, 0755, true);
+    @mkdir(UPLOADS_DIR, 0755, true);
 }
 if (!is_dir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'photos')) {
-    mkdir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'photos', 0755, true);
+    @mkdir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'photos', 0755, true);
 }
 if (!is_dir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'videos')) {
-    mkdir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'videos', 0755, true);
+    @mkdir(UPLOADS_DIR . DIRECTORY_SEPARATOR . 'videos', 0755, true);
 }
 
 // Ensure session storage works reliably across all environments
