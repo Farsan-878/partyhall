@@ -1,0 +1,27 @@
+# Cafe Coffea Apache Configuration
+<IfModule mod_mime.c>
+    AddType video/mp4 .mp4
+    AddType video/quicktime .mov .MOV
+    AddType video/webm .webm
+    AddType image/webp .webp
+    AddType image/png .png
+    AddType image/jpeg .jpg .jpeg
+    AddType image/svg+xml .svg
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Enable caching for static media assets
+    <FilesMatch "\.(ico|jpe?g|png|gif|webp|css|js|woff2?|ttf|otf|mp4|mov|MOV)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+</IfModule>
+
+# Protect database and sensitive files
+<FilesMatch "^(database\.sqlite|\.env|composer\.json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory browsing
+Options -Indexes
+

@@ -1,0 +1,14 @@
+# Temporary session data
+data/sessions/*
+!data/sessions/.gitkeep
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Temporary scratch files
+*.tmp
+*.log
