@@ -50,11 +50,6 @@
             </nav>
 
             <div class="header-actions">
-                <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm d-none-mobile">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>Enquire Now</span>
-                </a>
-
                 <!-- Mobile Hamburger Toggle -->
                 <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation menu">
                     <span class="hamburger-line"></span>
@@ -118,6 +113,7 @@
         <button class="lightbox-btn lightbox-next" aria-label="Next Image">
             <i class="fas fa-chevron-right"></i>
         </button>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 18</div>
         <div class="lightbox-content-wrap">
             <img src="" alt="Enlarged cafe photograph" class="lightbox-img">
         </div>
@@ -144,18 +140,6 @@
 
             <!-- Description -->
             <p class="hero-description">Create beautiful memories with your friends and family in our welcoming party space.</p>
-
-            <!-- Two Call To Action Buttons -->
-            <div class="hero-cta-group">
-                <a href="#gallery" class="btn btn-primary btn-lg">
-                    <i class="fas fa-sparkles"></i>
-                    <span>Explore Our Party Hall</span>
-                </a>
-                <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>Enquire Now</span>
-                </a>
-            </div>
 
             <!-- Mouse Scroll Indicator -->
             <a href="#quick-nav" class="hero-scroll-indicator" aria-label="Scroll to content">
@@ -373,10 +357,20 @@
                 <!-- Video 1: Party Hall Experience Reel -->
                 <div class="video-card">
                     <div class="video-player-container">
-                        <video class="video-element" controls playsinline preload="metadata" poster="assets/images/thumbs/IMG_1994.jpg">
+                        <video class="video-element" controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/images/thumbs/IMG_1994.jpg">
                             <source src="assets/videos/cafecoffe_hall_v2_reel.mp4" type="video/mp4">
                             Your browser does not support HTML5 video.
                         </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn-circle">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <span class="play-btn-label">Tap to Watch Fullscreen</span>
+                        </div>
+                        <button class="video-fs-btn" type="button" aria-label="Watch Fullscreen">
+                            <i class="fas fa-expand"></i>
+                            <span>Fullscreen</span>
+                        </button>
                     </div>
                     <div class="video-card-body">
                         <h3 class="video-title">Party Hall Walkthrough & Experience Reel</h3>
@@ -387,11 +381,21 @@
                 <!-- Video 2: Hall Interior & Atmosphere Tour -->
                 <div class="video-card">
                     <div class="video-player-container">
-                        <video class="video-element" controls playsinline preload="metadata" poster="assets/images/thumbs/IMG_1961.jpg">
+                        <video class="video-element" controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/images/thumbs/IMG_1961.jpg">
                             <source src="assets/videos/IMG_2079.MOV" type="video/mp4">
                             <source src="assets/videos/IMG_2079.MOV" type="video/quicktime">
                             Your browser does not support HTML5 video.
                         </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn-circle">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <span class="play-btn-label">Tap to Watch Fullscreen</span>
+                        </div>
+                        <button class="video-fs-btn" type="button" aria-label="Watch Fullscreen">
+                            <i class="fas fa-expand"></i>
+                            <span>Fullscreen</span>
+                        </button>
                     </div>
                     <div class="video-card-body">
                         <h3 class="video-title">Ambiance & Seating Highlights</h3>
@@ -897,3 +901,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

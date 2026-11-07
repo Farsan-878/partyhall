@@ -115,7 +115,7 @@ function initGalleryFilters() {
     });
 }
 
-// 5. Full-Screen Photo Lightbox
+// 5. Full-Screen Photo Lightbox with Mobile Swipe Navigation
 function initLightbox() {
     const lightbox = document.getElementById('gallery-lightbox');
     if (!lightbox) return;
@@ -125,6 +125,7 @@ function initLightbox() {
     const closeBtn = lightbox.querySelector('.lightbox-close');
     const prevBtn = lightbox.querySelector('.lightbox-prev');
     const nextBtn = lightbox.querySelector('.lightbox-next');
+    const counterEl = lightbox.querySelector('.lightbox-counter');
 
     let currentIndex = 0;
     let visibleCards = [];
@@ -144,7 +145,16 @@ function initLightbox() {
         const currentCard = visibleCards[currentIndex];
         const fullSrc = currentCard.getAttribute('data-full');
 
+        // Smooth image switch
+        imgEl.style.opacity = '0.3';
         imgEl.src = fullSrc;
+        imgEl.onload = () => {
+            imgEl.style.opacity = '1';
+        };
+
+        if (counterEl) {
+            counterEl.textContent = `${currentIndex + 1} / ${visibleCards.length}`;
+        }
     }
 
     cards.forEach(card => {
@@ -163,8 +173,14 @@ function initLightbox() {
     }
 
     if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-    if (prevBtn) prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+    if (prevBtn) prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImage(currentIndex - 1);
+    });
+    if (nextBtn) nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImage(currentIndex + 1);
+    });
 
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox || e.target.classList.contains('lightbox-content-wrap')) {
@@ -180,26 +196,40 @@ function initLightbox() {
         if (e.key === 'ArrowRight') showImage(currentIndex + 1);
     });
 
-    // Mobile touch swipe support
+    // Mobile touch swipe support (swipe-left for next, swipe-right for prev, swipe-down to close)
     let touchStartX = 0;
+    let touchStartY = 0;
     let touchEndX = 0;
+    let touchEndY = 0;
 
     lightbox.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
     }, { passive: true });
 
     lightbox.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
+        touchEndX = e.changedTouches[0].clientX;
+        touchEndY = e.changedTouches[0].clientY;
         handleSwipe();
     }, { passive: true });
 
     function handleSwipe() {
-        const threshold = 50;
-        if (touchEndX < touchStartX - threshold) {
-            showImage(currentIndex + 1);
-        }
-        if (touchEndX > touchStartX + threshold) {
-            showImage(currentIndex - 1);
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+        const threshold = 40;
+
+        // Check if horizontal swipe is dominant
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > threshold) {
+            if (diffX < 0) {
+                // Swipe Left -> Next Image
+                showImage(currentIndex + 1);
+            } else {
+                // Swipe Right -> Previous Image
+                showImage(currentIndex - 1);
+            }
+        } else if (diffY > 80 && Math.abs(diffX) < 60) {
+            // Swipe Down -> Close
+            closeLightbox();
         }
     }
 }
@@ -239,19 +269,72 @@ function initPricingCalculator() {
     });
 }
 
-// 7. Video Gallery playback control
+// 7. Video Gallery Playback & Native Fullscreen Support
 function initVideoPlayer() {
     const videoCards = document.querySelectorAll('.video-card');
-    videoCards.forEach(card => {
-        const video = card.querySelector('video');
+
+    function openFullscreenVideo(video) {
         if (!video) return;
 
+        // Trigger native fullscreen on mobile/desktop
+        if (video.requestFullscreen) {
+            video.requestFullscreen().catch(() => {});
+        } else if (video.webkitEnterFullscreen) {
+            // iOS Safari native fullscreen (handles portrait & landscape automatically)
+            video.webkitEnterFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+            video.mozRequestFullScreen();
+        } else if (video.msRequestFullscreen) {
+            video.msRequestFullscreen();
+        }
+
+        video.play().catch(() => {});
+    }
+
+    videoCards.forEach(card => {
+        const video = card.querySelector('video');
+        const overlay = card.querySelector('.video-play-overlay');
+        const fsBtn = card.querySelector('.video-fs-btn');
+
+        if (!video) return;
+
+        // When play overlay is clicked, launch fullscreen and play
+        if (overlay) {
+            overlay.addEventListener('click', () => {
+                openFullscreenVideo(video);
+            });
+        }
+
+        // When fullscreen button is clicked
+        if (fsBtn) {
+            fsBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openFullscreenVideo(video);
+            });
+        }
+
+        // Hide overlay on play, show on pause/ended
         video.addEventListener('play', () => {
+            if (overlay) overlay.classList.add('hidden');
+
+            // Pause other playing videos
             document.querySelectorAll('video').forEach(v => {
                 if (v !== video && !v.paused) {
                     v.pause();
                 }
             });
+        });
+
+        video.addEventListener('pause', () => {
+            if (overlay && !document.fullscreenElement) {
+                overlay.classList.remove('hidden');
+            }
+        });
+
+        video.addEventListener('ended', () => {
+            if (overlay) overlay.classList.remove('hidden');
         });
     });
 }

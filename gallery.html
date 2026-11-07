@@ -43,11 +43,6 @@
             </nav>
 
             <div class="header-actions">
-                <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm d-none-mobile">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>Enquire Now</span>
-                </a>
-
                 <!-- Mobile Hamburger Toggle -->
                 <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation menu">
                     <span class="hamburger-line"></span>
@@ -96,6 +91,28 @@
                 <i class="fas fa-phone-alt"></i>
                 <span>Call Us Directly</span>
             </a>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Action -->
+    <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Enquire on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Lightbox Modal Container for Fullscreen Image Viewing -->
+    <div id="gallery-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+        <button class="lightbox-btn lightbox-close" aria-label="Close Lightbox">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous Image">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-btn lightbox-next" aria-label="Next Image">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 18</div>
+        <div class="lightbox-content-wrap">
+            <img src="" alt="Enlarged cafe photograph" class="lightbox-img">
         </div>
     </div>
 
@@ -326,3 +343,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
