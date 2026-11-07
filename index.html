@@ -119,6 +119,47 @@
         </div>
     </div>
 
+    <!-- Video Theater Modal with Dedicated Close Button & Controls -->
+    <div id="video-theater-modal" class="video-theater-modal" role="dialog" aria-modal="true" aria-label="Video Player">
+        <div class="video-theater-backdrop" id="video-theater-backdrop"></div>
+        <div class="video-theater-topbar">
+            <span class="video-theater-title" id="video-theater-title">Party Hall Walkthrough</span>
+            <button type="button" class="video-theater-close" id="video-theater-close" aria-label="Close Video">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="video-theater-container">
+            <div class="video-theater-media-wrap">
+                <video id="video-theater-element" class="video-theater-element" playsinline webkit-playsinline preload="auto">
+                    <source src="" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <div class="video-theater-play-toggle" id="video-theater-play-toggle">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <!-- Custom Touch-Friendly Controls -->
+            <div class="video-theater-controls">
+                <button type="button" class="vt-btn" id="vt-play-pause-btn" aria-label="Play or Pause">
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="vt-progress-container" id="vt-progress-container">
+                    <div class="vt-progress-track">
+                        <div class="vt-progress-bar" id="vt-progress-bar"></div>
+                        <div class="vt-progress-thumb" id="vt-progress-thumb"></div>
+                    </div>
+                </div>
+                <div class="vt-time-display" id="vt-time-display">0:00 / 0:00</div>
+                <button type="button" class="vt-btn" id="vt-mute-btn" aria-label="Mute or Unmute">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <button type="button" class="vt-btn" id="vt-fullscreen-btn" aria-label="Fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
 
     <!-- =========================================================================
          1. HERO SECTION (Actual Cafe Interior Wide Background)
@@ -126,12 +167,6 @@
     <section class="hero-section" style="background-image: url('assets/images/IMG_1994.jpg');">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <!-- Brand Badge with Original Logo -->
-            <div class="hero-brand-badge">
-                <img src="assets/images/logo.png" alt="Cafe Coffea" class="hero-logo-img">
-                <span class="hero-brand-name">Cafe Coffea</span>
-            </div>
-
             <!-- Main Heading -->
             <h1 class="hero-title text-gold-gradient">Cups & Moments</h1>
 
@@ -355,7 +390,7 @@
 
             <div class="video-grid">
                 <!-- Video 1: Party Hall Experience Reel -->
-                <div class="video-card">
+                <div class="video-card" data-video="assets/videos/cafecoffe_hall_v2_reel.mp4" data-title="Party Hall Walkthrough & Experience Reel">
                     <div class="video-player-container">
                         <video class="video-element" controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/images/thumbs/IMG_1994.jpg">
                             <source src="assets/videos/cafecoffe_hall_v2_reel.mp4" type="video/mp4">
@@ -365,11 +400,11 @@
                             <div class="play-btn-circle">
                                 <i class="fas fa-play"></i>
                             </div>
-                            <span class="play-btn-label">Tap to Watch Fullscreen</span>
+                            <span class="play-btn-label">Tap to Watch Video</span>
                         </div>
-                        <button class="video-fs-btn" type="button" aria-label="Watch Fullscreen">
-                            <i class="fas fa-expand"></i>
-                            <span>Fullscreen</span>
+                        <button class="video-fs-btn" type="button" aria-label="Watch Video">
+                            <i class="fas fa-play"></i>
+                            <span>Watch</span>
                         </button>
                     </div>
                     <div class="video-card-body">
@@ -378,23 +413,22 @@
                     </div>
                 </div>
 
-                <!-- Video 2: Hall Interior & Atmosphere Tour -->
-                <div class="video-card">
+                <!-- Video 2: Hall Interior & Atmosphere Tour (Web-Compatible H.264 MP4) -->
+                <div class="video-card" data-video="assets/videos/IMG_2079.mp4" data-title="Ambiance & Seating Highlights">
                     <div class="video-player-container">
                         <video class="video-element" controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/images/thumbs/IMG_1961.jpg">
-                            <source src="assets/videos/IMG_2079.MOV" type="video/mp4">
-                            <source src="assets/videos/IMG_2079.MOV" type="video/quicktime">
+                            <source src="assets/videos/IMG_2079.mp4" type="video/mp4">
                             Your browser does not support HTML5 video.
                         </video>
                         <div class="video-play-overlay">
                             <div class="play-btn-circle">
                                 <i class="fas fa-play"></i>
                             </div>
-                            <span class="play-btn-label">Tap to Watch Fullscreen</span>
+                            <span class="play-btn-label">Tap to Watch Video</span>
                         </div>
-                        <button class="video-fs-btn" type="button" aria-label="Watch Fullscreen">
-                            <i class="fas fa-expand"></i>
-                            <span>Fullscreen</span>
+                        <button class="video-fs-btn" type="button" aria-label="Watch Video">
+                            <i class="fas fa-play"></i>
+                            <span>Watch</span>
                         </button>
                     </div>
                     <div class="video-card-body">
