@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNav();
     initGalleryFilters();
     initLightbox();
-    initPricingCalculator();
     initVideoPlayer();
     initSmoothScroll();
 });
@@ -88,31 +87,57 @@ function initSmoothScroll() {
     });
 }
 
-// 4. Photo Gallery Filtering (Clean display without promotional text between images)
+// 4. Photo Gallery Filtering & "View More Photos" Feature
 function initGalleryFilters() {
     const filterButtons = document.querySelectorAll('.gallery-filter-btn');
     const cards = document.querySelectorAll('.gallery-card');
+    const moreBtn = document.getElementById('gallery-more-btn');
+    const moreWrap = document.getElementById('gallery-more-wrap');
 
-    if (!filterButtons.length || !cards.length) return;
+    // Function to expand and lazily load all remaining photos
+    function expandGallery() {
+        const extraCards = document.querySelectorAll('.gallery-card-extra');
+        extraCards.forEach(card => {
+            const img = card.querySelector('img');
+            if (img && img.getAttribute('data-src')) {
+                img.src = img.getAttribute('data-src');
+                img.removeAttribute('data-src');
+            }
+            card.style.display = 'inline-block';
+            card.style.animation = 'fadeIn 0.35s ease forwards';
+        });
+        if (moreWrap) {
+            moreWrap.style.display = 'none';
+        }
+    }
 
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    if (moreBtn) {
+        moreBtn.addEventListener('click', expandGallery);
+    }
 
-            const filter = btn.getAttribute('data-filter');
+    if (filterButtons.length && cards.length) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Clicking a filter automatically expands full collection
+                expandGallery();
 
-            cards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (filter === 'all' || category === filter) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.35s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'inline-block';
+                        card.style.animation = 'fadeIn 0.35s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
-    });
+    }
 }
 
 // 5. Full-Screen Photo Lightbox with Mobile Swipe Navigation
@@ -234,42 +259,7 @@ function initLightbox() {
     }
 }
 
-// 6. Interactive Party Hall Booking Calculator
-// Rule: ₹1,000 per hour + ₹200 one-time cleaning fee per booking (applied only once!)
-function initPricingCalculator() {
-    const hourButtons = document.querySelectorAll('.calc-hour-btn');
-    const totalAmountEl = document.getElementById('calc-total-amount');
-    const totalSubEl = document.getElementById('calc-total-sub');
-    const whatsappBtn = document.getElementById('calc-whatsapp-btn');
-
-    if (!hourButtons.length || !totalAmountEl) return;
-
-    const hourlyRate = 1000;
-    const cleaningFee = 200; // Applied ONLY once per booking
-
-    hourButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            hourButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const hours = parseInt(btn.getAttribute('data-hours'), 10) || 1;
-            const hallRental = hours * hourlyRate;
-            const total = hallRental + cleaningFee;
-
-            totalAmountEl.textContent = '₹' + total.toLocaleString('en-IN');
-            totalSubEl.textContent = `${hours} Hour${hours > 1 ? 's' : ''} (₹${hallRental.toLocaleString('en-IN')}) + ₹200 one-time cleaning`;
-
-            // Update WhatsApp pre-filled text with selected hours and calculated price
-            if (whatsappBtn) {
-                const phone = '918157022220';
-                const msg = `Hello Cafe Coffea! I would like to book the Party Hall for ${hours} Hour${hours > 1 ? 's' : ''} (Total: ₹${total.toLocaleString('en-IN')}).%0A• Date: %0A• Time Slot: %0A• Guest Count: %0A• Occasion: %0A• Cake Pre-booking: `;
-                whatsappBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-            }
-        });
-    });
-}
-
-// 7. Video Gallery Playback & Dedicated Theater Modal with Accessible Controls
+// 6. Video Gallery Playback & Dedicated Theater Modal with Accessible Controls
 function initVideoPlayer() {
     const videoCards = document.querySelectorAll('.video-card');
     const modal = document.getElementById('video-theater-modal');

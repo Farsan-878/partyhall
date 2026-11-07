@@ -175,14 +175,6 @@
 
             <!-- Description -->
             <p class="hero-description">Create beautiful memories with your friends and family in our welcoming party space.</p>
-
-            <!-- Mouse Scroll Indicator -->
-            <a href="#quick-nav" class="hero-scroll-indicator" aria-label="Scroll to content">
-                <span>Discover More</span>
-                <div class="scroll-mouse">
-                    <div class="scroll-wheel"></div>
-                </div>
-            </a>
         </div>
     </section>
 
@@ -258,115 +250,124 @@
                 </div>
             </div>
 
-            <!-- Responsive Clean Gallery Grid (No decorative text between photos) -->
-            <div class="gallery-grid">
-                <!-- 1. Main Hall View -->
-                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_1994.jpg">
-                    <img src="assets/images/thumbs/IMG_1994.jpg" alt="Cafe Coffea Main Hall" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-
-                <!-- 2. Center Aisle -->
-                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_1995.jpg">
-                    <img src="assets/images/thumbs/IMG_1995.jpg" alt="Party Hall Center Aisle" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-
-                <!-- 3. Stage & Gold Logo -->
+            <!-- Responsive Clean Gallery Grid (Displays 3 Photos Initially) -->
+            <div class="gallery-grid" id="main-gallery-grid">
+                <!-- 1. Party Hall Stage (Initial Photo 1) -->
                 <div class="gallery-card" data-category="stage" data-full="assets/images/IMG_1961.jpg">
-                    <img src="assets/images/thumbs/IMG_1961.jpg" alt="Signature Stage & Golden Logo" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                    <img src="assets/images/thumbs/IMG_1961.jpg" alt="Signature Stage & Golden Logo" class="gallery-img" loading="eager">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
                 </div>
 
-                <!-- 4. Stage Backdrop -->
-                <div class="gallery-card" data-category="stage" data-full="assets/images/IMG_1964.jpg">
-                    <img src="assets/images/thumbs/IMG_1964.jpg" alt="Party Stage Backdrop" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                <!-- 2. Wide Party Hall Interior (Initial Photo 2) -->
+                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_1994.jpg">
+                    <img src="assets/images/thumbs/IMG_1994.jpg" alt="Cafe Coffea Main Hall" class="gallery-img" loading="eager">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
                 </div>
 
-                <!-- 5. Arch Backdrop -->
-                <div class="gallery-card" data-category="stage" data-full="assets/images/IMG_1965.jpg">
-                    <img src="assets/images/thumbs/IMG_1965.jpg" alt="Celebration Stage Arch" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-
-                <!-- 6. Velvet Chairs -->
-                <div class="gallery-card" data-category="stage" data-full="assets/images/IMG_1966.jpg">
-                    <img src="assets/images/thumbs/IMG_1966.jpg" alt="Stage Velvet Armchairs" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-
-                <!-- 7. Arch & Curtains -->
-                <div class="gallery-card" data-category="stage" data-full="assets/images/IMG_1967.jpg">
-                    <img src="assets/images/thumbs/IMG_1967.jpg" alt="Arch & Drapes" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-
-                <!-- 8. Spotlight Lighting -->
-                <div class="gallery-card" data-category="decor" data-full="assets/images/IMG_1980.jpg">
-                    <img src="assets/images/thumbs/IMG_1980.jpg" alt="Spotlight Ambience" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-
-                <!-- 9. Dining Setup -->
-                <div class="gallery-card" data-category="seating" data-full="assets/images/IMG_1988.jpg">
-                    <img src="assets/images/thumbs/IMG_1988.jpg" alt="Guest Dining Arrangement" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-
-                <!-- 10. Table Arrangement -->
-                <div class="gallery-card" data-category="seating" data-full="assets/images/IMG_1990.jpg">
-                    <img src="assets/images/thumbs/IMG_1990.jpg" alt="Table Setup" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-
-                <!-- 11. Brick Wall Seating -->
-                <div class="gallery-card" data-category="seating" data-full="assets/images/IMG_1992.jpg">
-                    <img src="assets/images/thumbs/IMG_1992.jpg" alt="Brick Wall Seating" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
-                </div>
-
-                <!-- 12. Dining Rows -->
+                <!-- 3. Dining Rows & Amber Lighting (Initial Photo 3) -->
                 <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_1996.jpg">
-                    <img src="assets/images/thumbs/IMG_1996.jpg" alt="Dining Rows & Amber Lighting" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                    <img src="assets/images/thumbs/IMG_1996.jpg" alt="Dining Rows & Amber Lighting" class="gallery-img" loading="eager">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
+                </div>
+
+                <!-- === Remaining 15 Photographs (Loaded lazily upon clicking 'View More Photos') === -->
+                <!-- 4. Center Aisle -->
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="interior" data-full="assets/images/IMG_1995.jpg">
+                    <img data-src="assets/images/thumbs/IMG_1995.jpg" alt="Party Hall Center Aisle" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
+                </div>
+
+                <!-- 5. Stage Backdrop -->
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="stage" data-full="assets/images/IMG_1964.jpg">
+                    <img data-src="assets/images/thumbs/IMG_1964.jpg" alt="Party Stage Backdrop" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
+                </div>
+
+                <!-- 6. Arch Backdrop -->
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="stage" data-full="assets/images/IMG_1965.jpg">
+                    <img data-src="assets/images/thumbs/IMG_1965.jpg" alt="Celebration Stage Arch" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
+                </div>
+
+                <!-- 7. Velvet Chairs -->
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="stage" data-full="assets/images/IMG_1966.jpg">
+                    <img data-src="assets/images/thumbs/IMG_1966.jpg" alt="Stage Velvet Armchairs" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
+                </div>
+
+                <!-- 8. Arch & Curtains -->
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="stage" data-full="assets/images/IMG_1967.jpg">
+                    <img data-src="assets/images/thumbs/IMG_1967.jpg" alt="Arch & Drapes" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
+                </div>
+
+                <!-- 9. Spotlight Lighting -->
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="decor" data-full="assets/images/IMG_1980.jpg">
+                    <img data-src="assets/images/thumbs/IMG_1980.jpg" alt="Spotlight Ambience" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
+                </div>
+
+                <!-- 10. Dining Setup -->
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="seating" data-full="assets/images/IMG_1988.jpg">
+                    <img data-src="assets/images/thumbs/IMG_1988.jpg" alt="Guest Dining Arrangement" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
+                </div>
+
+                <!-- 11. Table Arrangement -->
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="seating" data-full="assets/images/IMG_1990.jpg">
+                    <img data-src="assets/images/thumbs/IMG_1990.jpg" alt="Table Setup" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
+                </div>
+
+                <!-- 12. Brick Wall Seating -->
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="seating" data-full="assets/images/IMG_1992.jpg">
+                    <img data-src="assets/images/thumbs/IMG_1992.jpg" alt="Brick Wall Seating" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
                 </div>
 
                 <!-- 13. Hall Layout -->
-                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_1999.jpg">
-                    <img src="assets/images/thumbs/IMG_1999.jpg" alt="Party Hall Layout" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="interior" data-full="assets/images/IMG_1999.jpg">
+                    <img data-src="assets/images/thumbs/IMG_1999.jpg" alt="Party Hall Layout" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
                 </div>
 
                 <!-- 14. Dining Corner -->
-                <div class="gallery-card" data-category="seating" data-full="assets/images/IMG_2002.jpg">
-                    <img src="assets/images/thumbs/IMG_2002.jpg" alt="Celebration Dining Area" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="seating" data-full="assets/images/IMG_2002.jpg">
+                    <img data-src="assets/images/thumbs/IMG_2002.jpg" alt="Celebration Dining Area" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
                 </div>
 
                 <!-- 15. Glass Gallery -->
-                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_2011.jpg">
-                    <img src="assets/images/thumbs/IMG_2011.jpg" alt="Glass Gallery Perspective" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="interior" data-full="assets/images/IMG_2011.jpg">
+                    <img data-src="assets/images/thumbs/IMG_2011.jpg" alt="Glass Gallery Perspective" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
                 </div>
 
                 <!-- 16. Panoramic Hall -->
-                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_2012.jpg">
-                    <img src="assets/images/thumbs/IMG_2012.jpg" alt="Panoramic Cafe Hall" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="interior" data-full="assets/images/IMG_2012.jpg">
+                    <img data-src="assets/images/thumbs/IMG_2012.jpg" alt="Panoramic Cafe Hall" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
                 </div>
 
                 <!-- 17. Intimate Seating -->
-                <div class="gallery-card" data-category="seating" data-full="assets/images/IMG_2013.jpg">
-                    <img src="assets/images/thumbs/IMG_2013.jpg" alt="Intimate Seating Corner" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="seating" data-full="assets/images/IMG_2013.jpg">
+                    <img data-src="assets/images/thumbs/IMG_2013.jpg" alt="Intimate Seating Corner" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
                 </div>
 
                 <!-- 18. Evening Ambience -->
-                <div class="gallery-card" data-category="decor" data-full="assets/images/IMG_2014.jpg">
-                    <img src="assets/images/thumbs/IMG_2014.jpg" alt="Warm Glow Cafe Evening" class="gallery-img" loading="lazy">
-                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                <div class="gallery-card gallery-card-extra" style="display: none;" data-category="decor" data-full="assets/images/IMG_2014.jpg">
+                    <img data-src="assets/images/thumbs/IMG_2014.jpg" alt="Warm Glow Cafe Evening" class="gallery-img">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i> <span>View</span></div>
                 </div>
+            </div>
+
+            <!-- View More Photos Feature -->
+            <div class="gallery-more-wrap text-center" id="gallery-more-wrap">
+                <button type="button" class="btn btn-outline gallery-more-btn" id="gallery-more-btn">
+                    <i class="fas fa-images"></i>
+                    <span>View More Photos</span>
+                </button>
             </div>
         </div>
     </section>
@@ -476,10 +477,12 @@
                                 </div>
                                 <div>
                                     <div class="pricing-item-title">Party Hall Rental</div>
-                                    <div class="pricing-item-subtitle">Exclusive use of the private party space</div>
+                                    <div class="pricing-item-subtitle">Exclusive private party space reservation</div>
                                 </div>
                             </div>
-                            <div class="pricing-item-amount">₹1,000 <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">/ hour</span></div>
+                            <div class="pricing-item-right">
+                                <div class="pricing-item-amount">₹1,000 <span class="pricing-unit">/ hour</span></div>
+                            </div>
                         </div>
 
                         <!-- Cleaning Charge -->
@@ -493,7 +496,10 @@
                                     <div class="pricing-item-subtitle">Fixed post-event sanitization and hall cleanup</div>
                                 </div>
                             </div>
-                            <div class="pricing-item-amount">₹200 <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">(one-time per booking)</span></div>
+                            <div class="pricing-item-right">
+                                <div class="pricing-item-amount">₹200</div>
+                                <span class="pricing-tag-onetime">One-Time Charge Per Booking</span>
+                            </div>
                         </div>
                     </div>
 
@@ -501,30 +507,7 @@
                     <div class="pricing-rule-callout">
                         <i class="fas fa-info-circle"></i>
                         <div>
-                            <p><strong>IMPORTANT PRICING RULE:</strong> The <strong>₹200 cleaning fee is a one-time booking charge</strong>, applied only once per booking regardless of the number of hours booked.</p>
-                        </div>
-                    </div>
-
-                    <!-- Interactive Duration Calculator -->
-                    <div class="calc-box">
-                        <div class="calc-title">Interactive Pricing Calculator</div>
-                        <div class="calc-subtitle">Select your event duration to see the exact total cost:</div>
-
-                        <div class="calc-buttons-row">
-                            <button type="button" class="calc-hour-btn active" data-hours="1">1 Hour</button>
-                            <button type="button" class="calc-hour-btn" data-hours="2">2 Hours</button>
-                            <button type="button" class="calc-hour-btn" data-hours="3">3 Hours</button>
-                            <button type="button" class="calc-hour-btn" data-hours="4">4 Hours</button>
-                            <button type="button" class="calc-hour-btn" data-hours="5">5 Hours</button>
-                        </div>
-
-                        <!-- Live Calculated Total Box -->
-                        <div class="pricing-total-box">
-                            <div>
-                                <div class="total-label">Calculated Booking Total</div>
-                                <div class="total-sub" id="calc-total-sub">1 Hour (₹1,000) + ₹200 one-time cleaning</div>
-                            </div>
-                            <div class="total-amount" id="calc-total-amount">₹1,200</div>
+                            <p><strong>IMPORTANT PRICING RULE:</strong> The <strong>₹200 cleaning charge is applied only ONCE per booking</strong>, regardless of the number of hours booked.</p>
                         </div>
                     </div>
 
@@ -554,10 +537,10 @@
                             <span>Special Food Order Offer</span>
                         </div>
                         <h4 class="offer-headline-text">
-                            Enjoy 1 Hour of Party Hall FREE!
+                            ENJOY 1 HOUR OF PARTY HALL FREE!
                         </h4>
                         <p class="offer-description-text">
-                            When your eligible food orders at Cafe Coffea reach <strong>₹5,000 or above</strong>, you receive <strong>1 hour of party hall usage FREE</strong>.
+                            When eligible food orders at Cafe Coffea reach <strong>₹5,000 or above</strong>, customers receive <strong>1 hour of party hall usage FREE</strong>.
                         </p>
                         <div class="offer-terms-text">
                             <strong>Offer Terms:</strong> The free usage is strictly limited to exactly one hour. Valid on eligible food and beverage orders placed with Cafe Coffea for your event date. The one-time ₹200 cleaning charge and standard extension rates apply.
@@ -566,9 +549,9 @@
 
                     <!-- Booking Actions -->
                     <div class="pricing-actions">
-                        <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20book%20the%20Party%20Hall%20for%201%20Hour%20(Total:%20%E2%82%B91,200).%0A%E2%80%A2%20Date:%20%0A%E2%80%A2%20Time%20Slot:%20%0A%E2%80%A2%20Guest%20Count:%20%0A%E2%80%A2%20Occasion:%20%0A%E2%80%A2%20Cake%20Pre-booking:%20" id="calc-whatsapp-btn" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                        <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
                             <i class="fab fa-whatsapp"></i>
-                            <span>Reserve via WhatsApp</span>
+                            <span>Enquire on WhatsApp</span>
                         </a>
                         <a href="#instructions" class="btn btn-outline btn-lg">
                             <i class="fas fa-info-circle"></i>
