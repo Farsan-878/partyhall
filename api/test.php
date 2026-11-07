@@ -1,2 +1,0 @@
-<?php
-echo "PHP is working on Vercel! Version: " . phpversion();

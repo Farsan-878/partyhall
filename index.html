@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Cafe Coffea – Cups & Moments | Premium Party Hall in Kottakkal</title>
+    
+    <!-- SEO & OpenGraph Meta -->
+    <meta name="description" content="Celebrate your birthdays, anniversaries, and special moments at Cafe Coffea's premium party hall in Kottakkal. Cozy ambiance, dark forest green luxury atmosphere, and handcrafted cakes.">
+    <meta property="og:title" content="Cafe Coffea – Cups & Moments | Premium Party Hall">
+    <meta property="og:description" content="Celebrate Your Special Moments at Cafe Coffea. Premium party hall space in Kottakkal.">
+    <meta property="og:image" content="assets/images/logo.png">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet (Dark Forest Green Theme) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="brand-link" aria-label="Cafe Coffea Homepage">
+                <img src="assets/images/logo.png" alt="Cafe Coffea Logo" class="brand-logo-img">
+                <div class="brand-text-block">
+                    <span class="brand-title">Cafe Coffea</span>
+                    <span class="brand-subtitle">Cups & Moments</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#videos" class="nav-link">Videos</a>
+                <a href="#pricing" class="nav-link">Packages & Charges</a>
+                <a href="#instructions" class="nav-link">Instructions</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm d-none-mobile">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Enquire Now</span>
+                </a>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="mobile-menu-list">
+            <a href="#gallery" class="mobile-nav-link">
+                <span>Photo Gallery</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="#videos" class="mobile-nav-link">
+                <span>Video Tour</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="#pricing" class="mobile-nav-link">
+                <span>Packages & Pricing</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="#instructions" class="mobile-nav-link">
+                <span>Party Hall Rules & Policies</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="#contact" class="mobile-nav-link">
+                <span>Location & Contact</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+
+        <div class="mobile-drawer-footer">
+            <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                <i class="fab fa-whatsapp"></i>
+                <span>Enquire via WhatsApp</span>
+            </a>
+            <a href="tel:+918157022220" class="btn btn-outline btn-lg">
+                <i class="fas fa-phone-alt"></i>
+                <span>Call Us Directly</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Action on Mobile -->
+    <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Enquire on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Lightbox Modal Container for Fullscreen Image Viewing -->
+    <div id="gallery-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+        <button class="lightbox-btn lightbox-close" aria-label="Close Lightbox">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous Image">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-btn lightbox-next" aria-label="Next Image">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content-wrap">
+            <img src="" alt="Enlarged cafe photograph" class="lightbox-img">
+        </div>
+    </div>
+
+
+    <!-- =========================================================================
+         1. HERO SECTION (Actual Cafe Interior Wide Background)
+         ========================================================================= -->
+    <section class="hero-section" style="background-image: url('assets/images/IMG_1994.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <!-- Brand Badge with Original Logo -->
+            <div class="hero-brand-badge">
+                <img src="assets/images/logo.png" alt="Cafe Coffea" class="hero-logo-img">
+                <span class="hero-brand-name">Cafe Coffea</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title text-gold-gradient">Cups & Moments</h1>
+
+            <!-- Subheading -->
+            <p class="hero-subtitle">Celebrate Your Special Moments at Cafe Coffea.</p>
+
+            <!-- Description -->
+            <p class="hero-description">Create beautiful memories with your friends and family in our welcoming party space.</p>
+
+            <!-- Two Call To Action Buttons -->
+            <div class="hero-cta-group">
+                <a href="#gallery" class="btn btn-primary btn-lg">
+                    <i class="fas fa-sparkles"></i>
+                    <span>Explore Our Party Hall</span>
+                </a>
+                <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Enquire Now</span>
+                </a>
+            </div>
+
+            <!-- Mouse Scroll Indicator -->
+            <a href="#quick-nav" class="hero-scroll-indicator" aria-label="Scroll to content">
+                <span>Discover More</span>
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- =========================================================================
+         2. QUICK NAVIGATION (4 Shortcut Cards)
+         ========================================================================= -->
+    <section class="quick-nav-section" id="quick-nav">
+        <div class="container">
+            <div class="quick-nav-grid">
+                <!-- 1. Gallery -->
+                <a href="#gallery" class="quick-card">
+                    <div class="quick-icon-wrap">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3 class="quick-title">Gallery</h3>
+                    <p class="quick-desc">Hall photos & setup</p>
+                </a>
+
+                <!-- 2. Videos -->
+                <a href="#videos" class="quick-card">
+                    <div class="quick-icon-wrap">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <h3 class="quick-title">Videos</h3>
+                    <p class="quick-desc">Atmosphere & tour</p>
+                </a>
+
+                <!-- 3. Packages & Charges -->
+                <a href="#pricing" class="quick-card">
+                    <div class="quick-icon-wrap">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3 class="quick-title">Packages & Charges</h3>
+                    <p class="quick-desc">Tariff & special offer</p>
+                </a>
+
+                <!-- 4. Instructions -->
+                <a href="#instructions" class="quick-card">
+                    <div class="quick-icon-wrap">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="quick-title">Instructions</h3>
+                    <p class="quick-desc">Rules & policies</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================================
+         3. CLEAN PHOTO GALLERY (No promotional text between photos)
+         ========================================================================= -->
+    <section class="section section-dark" id="gallery">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag">
+                    <i class="fas fa-camera"></i>
+                    <span>Real Experience</span>
+                </div>
+                <h2 class="section-title">Party Hall Photo Gallery</h2>
+                <p class="section-subtitle">
+                    Explore our private party hall interior, signature stage seating, designer lighting, and celebration dining arrangements.
+                </p>
+
+                <!-- Filter Tabs -->
+                <div class="gallery-filters">
+                    <button type="button" class="gallery-filter-btn active" data-filter="all">All Photos</button>
+                    <button type="button" class="gallery-filter-btn" data-filter="stage">Stage & Backdrop</button>
+                    <button type="button" class="gallery-filter-btn" data-filter="interior">Hall Interior</button>
+                    <button type="button" class="gallery-filter-btn" data-filter="seating">Seating & Dining</button>
+                    <button type="button" class="gallery-filter-btn" data-filter="decor">Ambiance & Decor</button>
+                </div>
+            </div>
+
+            <!-- Responsive Clean Gallery Grid (No decorative text between photos) -->
+            <div class="gallery-grid">
+                <!-- 1. Main Hall View -->
+                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_1994.jpg">
+                    <img src="assets/images/thumbs/IMG_1994.jpg" alt="Cafe Coffea Main Hall" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 2. Center Aisle -->
+                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_1995.jpg">
+                    <img src="assets/images/thumbs/IMG_1995.jpg" alt="Party Hall Center Aisle" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 3. Stage & Gold Logo -->
+                <div class="gallery-card" data-category="stage" data-full="assets/images/IMG_1961.jpg">
+                    <img src="assets/images/thumbs/IMG_1961.jpg" alt="Signature Stage & Golden Logo" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 4. Stage Backdrop -->
+                <div class="gallery-card" data-category="stage" data-full="assets/images/IMG_1964.jpg">
+                    <img src="assets/images/thumbs/IMG_1964.jpg" alt="Party Stage Backdrop" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 5. Arch Backdrop -->
+                <div class="gallery-card" data-category="stage" data-full="assets/images/IMG_1965.jpg">
+                    <img src="assets/images/thumbs/IMG_1965.jpg" alt="Celebration Stage Arch" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 6. Velvet Chairs -->
+                <div class="gallery-card" data-category="stage" data-full="assets/images/IMG_1966.jpg">
+                    <img src="assets/images/thumbs/IMG_1966.jpg" alt="Stage Velvet Armchairs" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 7. Arch & Curtains -->
+                <div class="gallery-card" data-category="stage" data-full="assets/images/IMG_1967.jpg">
+                    <img src="assets/images/thumbs/IMG_1967.jpg" alt="Arch & Drapes" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 8. Spotlight Lighting -->
+                <div class="gallery-card" data-category="decor" data-full="assets/images/IMG_1980.jpg">
+                    <img src="assets/images/thumbs/IMG_1980.jpg" alt="Spotlight Ambience" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 9. Dining Setup -->
+                <div class="gallery-card" data-category="seating" data-full="assets/images/IMG_1988.jpg">
+                    <img src="assets/images/thumbs/IMG_1988.jpg" alt="Guest Dining Arrangement" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 10. Table Arrangement -->
+                <div class="gallery-card" data-category="seating" data-full="assets/images/IMG_1990.jpg">
+                    <img src="assets/images/thumbs/IMG_1990.jpg" alt="Table Setup" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 11. Brick Wall Seating -->
+                <div class="gallery-card" data-category="seating" data-full="assets/images/IMG_1992.jpg">
+                    <img src="assets/images/thumbs/IMG_1992.jpg" alt="Brick Wall Seating" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 12. Dining Rows -->
+                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_1996.jpg">
+                    <img src="assets/images/thumbs/IMG_1996.jpg" alt="Dining Rows & Amber Lighting" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 13. Hall Layout -->
+                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_1999.jpg">
+                    <img src="assets/images/thumbs/IMG_1999.jpg" alt="Party Hall Layout" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 14. Dining Corner -->
+                <div class="gallery-card" data-category="seating" data-full="assets/images/IMG_2002.jpg">
+                    <img src="assets/images/thumbs/IMG_2002.jpg" alt="Celebration Dining Area" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 15. Glass Gallery -->
+                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_2011.jpg">
+                    <img src="assets/images/thumbs/IMG_2011.jpg" alt="Glass Gallery Perspective" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 16. Panoramic Hall -->
+                <div class="gallery-card" data-category="interior" data-full="assets/images/IMG_2012.jpg">
+                    <img src="assets/images/thumbs/IMG_2012.jpg" alt="Panoramic Cafe Hall" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 17. Intimate Seating -->
+                <div class="gallery-card" data-category="seating" data-full="assets/images/IMG_2013.jpg">
+                    <img src="assets/images/thumbs/IMG_2013.jpg" alt="Intimate Seating Corner" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+
+                <!-- 18. Evening Ambience -->
+                <div class="gallery-card" data-category="decor" data-full="assets/images/IMG_2014.jpg">
+                    <img src="assets/images/thumbs/IMG_2014.jpg" alt="Warm Glow Cafe Evening" class="gallery-img" loading="lazy">
+                    <div class="gallery-zoom-badge"><i class="fas fa-expand-arrows-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================================
+         4. TWO NEW VIDEOS (Replaced Old Videos)
+         ========================================================================= -->
+    <section class="section section-surface" id="videos">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag">
+                    <i class="fas fa-film"></i>
+                    <span>Video Showcase</span>
+                </div>
+                <h2 class="section-title">Experience the Vibe in Motion</h2>
+                <p class="section-subtitle">
+                    Take a virtual walkthrough of our party hall space and feel the welcoming warmth and cozy Dark Forest Green aesthetic of Cafe Coffea.
+                </p>
+            </div>
+
+            <div class="video-grid">
+                <!-- Video 1: Party Hall Experience Reel -->
+                <div class="video-card">
+                    <div class="video-player-container">
+                        <video class="video-element" controls playsinline preload="metadata" poster="assets/images/thumbs/IMG_1994.jpg">
+                            <source src="assets/videos/cafecoffe_hall_v2_reel.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+                    <div class="video-card-body">
+                        <h3 class="video-title">Party Hall Walkthrough & Experience Reel</h3>
+                        <p class="video-description">A cinematic tour showcasing the designer party stage, ambient track lighting, dining tables, and exclusive celebration space at Cafe Coffea.</p>
+                    </div>
+                </div>
+
+                <!-- Video 2: Hall Interior & Atmosphere Tour -->
+                <div class="video-card">
+                    <div class="video-player-container">
+                        <video class="video-element" controls playsinline preload="metadata" poster="assets/images/thumbs/IMG_1961.jpg">
+                            <source src="assets/videos/IMG_2079.MOV" type="video/mp4">
+                            <source src="assets/videos/IMG_2079.MOV" type="video/quicktime">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+                    <div class="video-card-body">
+                        <h3 class="video-title">Ambiance & Seating Highlights</h3>
+                        <p class="video-description">A closer look at the velvet stage armchairs, signature gold monogram arch, warm glow pendant lights, and spacious guest dining rows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================================
+         5. PACKAGES & CHARGES (Clear Rule: Cleaning fee is one-time per booking)
+         ========================================================================= -->
+    <section class="section section-dark" id="pricing">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag">
+                    <i class="fas fa-gem"></i>
+                    <span>Simple & Transparent</span>
+                </div>
+                <h2 class="section-title">Packages & Charges</h2>
+                <p class="section-subtitle">
+                    Enjoy our luxurious private party hall with honest, straightforward pricing and zero hidden fees.
+                </p>
+            </div>
+
+            <div class="pricing-wrapper">
+                <div class="pricing-card-main">
+                    <div class="pricing-header">
+                        <span class="section-tag">Standard Rates</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.85rem; color: var(--text-primary); margin-top: 0.5rem;">
+                            Party Hall Booking Charges
+                        </h3>
+                    </div>
+
+                    <!-- Itemized Breakdown -->
+                    <div class="pricing-breakdown-list">
+                        <!-- Party Hall Rental -->
+                        <div class="pricing-item">
+                            <div class="pricing-item-info">
+                                <div class="pricing-item-icon">
+                                    <i class="fas fa-door-open"></i>
+                                </div>
+                                <div>
+                                    <div class="pricing-item-title">Party Hall Rental</div>
+                                    <div class="pricing-item-subtitle">Exclusive use of the private party space</div>
+                                </div>
+                            </div>
+                            <div class="pricing-item-amount">₹1,000 <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">/ hour</span></div>
+                        </div>
+
+                        <!-- Cleaning Charge -->
+                        <div class="pricing-item">
+                            <div class="pricing-item-info">
+                                <div class="pricing-item-icon">
+                                    <i class="fas fa-broom"></i>
+                                </div>
+                                <div>
+                                    <div class="pricing-item-title">Cleaning Charge</div>
+                                    <div class="pricing-item-subtitle">Fixed post-event sanitization and hall cleanup</div>
+                                </div>
+                            </div>
+                            <div class="pricing-item-amount">₹200 <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">(one-time per booking)</span></div>
+                        </div>
+                    </div>
+
+                    <!-- IMPORTANT PRICING RULE CALLOUT -->
+                    <div class="pricing-rule-callout">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <p><strong>IMPORTANT PRICING RULE:</strong> The <strong>₹200 cleaning fee is a one-time booking charge</strong>, applied only once per booking regardless of the number of hours booked.</p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Duration Calculator -->
+                    <div class="calc-box">
+                        <div class="calc-title">Interactive Pricing Calculator</div>
+                        <div class="calc-subtitle">Select your event duration to see the exact total cost:</div>
+
+                        <div class="calc-buttons-row">
+                            <button type="button" class="calc-hour-btn active" data-hours="1">1 Hour</button>
+                            <button type="button" class="calc-hour-btn" data-hours="2">2 Hours</button>
+                            <button type="button" class="calc-hour-btn" data-hours="3">3 Hours</button>
+                            <button type="button" class="calc-hour-btn" data-hours="4">4 Hours</button>
+                            <button type="button" class="calc-hour-btn" data-hours="5">5 Hours</button>
+                        </div>
+
+                        <!-- Live Calculated Total Box -->
+                        <div class="pricing-total-box">
+                            <div>
+                                <div class="total-label">Calculated Booking Total</div>
+                                <div class="total-sub" id="calc-total-sub">1 Hour (₹1,000) + ₹200 one-time cleaning</div>
+                            </div>
+                            <div class="total-amount" id="calc-total-amount">₹1,200</div>
+                        </div>
+                    </div>
+
+                    <!-- Clear Pricing Examples Grid -->
+                    <div class="pricing-examples-grid">
+                        <div class="example-card">
+                            <div class="example-duration">1 Hour Booking</div>
+                            <div class="example-formula">₹1,000 + ₹200 (cleaning)</div>
+                            <div class="example-total text-gold">₹1,200</div>
+                        </div>
+                        <div class="example-card">
+                            <div class="example-duration">2 Hours Booking</div>
+                            <div class="example-formula">₹2,000 + ₹200 (cleaning)</div>
+                            <div class="example-total text-gold">₹2,200</div>
+                        </div>
+                        <div class="example-card">
+                            <div class="example-duration">3 Hours Booking</div>
+                            <div class="example-formula">₹3,000 + ₹200 (cleaning)</div>
+                            <div class="example-total text-gold">₹3,200</div>
+                        </div>
+                    </div>
+
+                    <!-- 6. SPECIAL FOOD ORDER OFFER -->
+                    <div class="special-offer-card">
+                        <div class="offer-badge">
+                            <i class="fas fa-gift"></i>
+                            <span>Special Food Order Offer</span>
+                        </div>
+                        <h4 class="offer-headline-text">
+                            Enjoy 1 Hour of Party Hall FREE!
+                        </h4>
+                        <p class="offer-description-text">
+                            When your eligible food orders at Cafe Coffea reach <strong>₹5,000 or above</strong>, you receive <strong>1 hour of party hall usage FREE</strong>.
+                        </p>
+                        <div class="offer-terms-text">
+                            <strong>Offer Terms:</strong> The free usage is strictly limited to exactly one hour. Valid on eligible food and beverage orders placed with Cafe Coffea for your event date. The one-time ₹200 cleaning charge and standard extension rates apply.
+                        </div>
+                    </div>
+
+                    <!-- Booking Actions -->
+                    <div class="pricing-actions">
+                        <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20book%20the%20Party%20Hall%20for%201%20Hour%20(Total:%20%E2%82%B91,200).%0A%E2%80%A2%20Date:%20%0A%E2%80%A2%20Time%20Slot:%20%0A%E2%80%A2%20Guest%20Count:%20%0A%E2%80%A2%20Occasion:%20%0A%E2%80%A2%20Cake%20Pre-booking:%20" id="calc-whatsapp-btn" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Reserve via WhatsApp</span>
+                        </a>
+                        <a href="#instructions" class="btn btn-outline btn-lg">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Review Rules & Policies</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================================
+         7. INSTRUCTIONS & TERMS AND CONDITIONS (Rules, Decoration, Cake Policies)
+         ========================================================================= -->
+    <section class="section section-surface" id="instructions">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Guidelines for Guests</span>
+                </div>
+                <h2 class="section-title">Instructions & Policies</h2>
+                <p class="section-subtitle">
+                    To maintain our café's pristine ambiance and ensure a seamless experience for every guest, please review the party hall policies below.
+                </p>
+            </div>
+
+            <div class="instructions-container">
+                <!-- 1. Party Hall Rules -->
+                <div class="policy-card">
+                    <div class="policy-header">
+                        <div class="policy-icon-wrap">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="policy-title">Party Hall Rules</h3>
+                            <p class="policy-subtitle">Duration, booking tariffs, and timing adherence</p>
+                        </div>
+                    </div>
+                    <div class="policy-rules-list">
+                        <div class="rule-item">
+                            <div class="rule-number">1</div>
+                            <div class="rule-text"><strong>Standard Charge:</strong> Standard party hall charge is ₹1,000 for one hour.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">2</div>
+                            <div class="rule-text"><strong>One-Time Cleaning:</strong> Cleaning charge is ₹200 per booking (applied only once).</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">3</div>
+                            <div class="rule-text"><strong>Allotted Duration:</strong> Standard party hall duration is exactly one hour per booked slot.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">4</div>
+                            <div class="rule-text"><strong>Schedule Punctuality:</strong> Customers must follow the allotted time strictly.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">5</div>
+                            <div class="rule-text"><strong>Additional Usage:</strong> Additional usage requires prior approval and applicable charges.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Decoration Policy -->
+                <div class="policy-card">
+                    <div class="policy-header">
+                        <div class="policy-icon-wrap">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div>
+                            <h3 class="policy-title">Decoration Policy</h3>
+                            <p class="policy-subtitle">Wallpaper preservation, safe methods, and property care</p>
+                        </div>
+                    </div>
+                    <div class="policy-rules-list">
+                        <div class="rule-item">
+                            <div class="rule-number">1</div>
+                            <div class="rule-text"><strong>Own Arrangements:</strong> Customers are allowed to arrange their own decorations.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">2</div>
+                            <div class="rule-text"><strong>Wallpaper Protection:</strong> Customers must ensure that decorations do not damage the wallpaper.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">3</div>
+                            <div class="rule-text"><strong>Property Care:</strong> Do not damage walls, furniture, lighting, fixtures or other café property.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">4</div>
+                            <div class="rule-text"><strong>Safe Methods:</strong> Use safe decoration methods (such as non-marking adhesive clips or free-standing stands) that can be removed without causing damage.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">5</div>
+                            <div class="rule-text"><strong>Customer Responsibility:</strong> Customers are responsible for damage caused during their event.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">6</div>
+                            <div class="rule-text"><strong>Inspection:</strong> If any damage occurs, the café management will inspect it.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">7</div>
+                            <div class="rule-text"><strong>Repair Charges:</strong> The necessary repair or replacement charges will be assessed and communicated to the customer.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">8</div>
+                            <div class="rule-text"><strong>Official Record:</strong> Maintain a record of damages and applicable charges.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Cake Policy -->
+                <div class="policy-card">
+                    <div class="policy-header">
+                        <div class="policy-icon-wrap">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <div>
+                            <h3 class="policy-title">Cake Policy</h3>
+                            <p class="policy-subtitle">In-house cake orders, outside cakes, and food restrictions</p>
+                        </div>
+                    </div>
+                    <div class="policy-rules-list">
+                        <div class="rule-item">
+                            <div class="rule-number">1</div>
+                            <div class="rule-text"><strong>In-House Pre-Booking:</strong> Customers can pre-book cakes directly from Cafe Coffea.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">2</div>
+                            <div class="rule-text"><strong>Transparent Pricing:</strong> Cakes prepared by Cafe Coffea have separate prices.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">3</div>
+                            <div class="rule-text"><strong>Outside Cakes:</strong> Customers may also bring their own cake from outside.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">4</div>
+                            <div class="rule-text"><strong>No Outside Food:</strong> Other outside food items are strictly not allowed.</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-number">5</div>
+                            <div class="rule-text"><strong>Advance Notice:</strong> Customers should inform the café in advance about their cake requirements.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================================
+         8. WHATSAPP ENQUIRY BANNER
+         ========================================================================= -->
+    <section class="section section-dark" style="padding-top: 0; padding-bottom: 2rem;">
+        <div class="container">
+            <div class="whatsapp-banner">
+                <div class="whatsapp-content">
+                    <div class="section-tag" style="background: rgba(37, 211, 102, 0.15); border-color: rgba(37, 211, 102, 0.4); color: #25D366;">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Instant Support</span>
+                    </div>
+                    <h3 class="whatsapp-title">Ready to Plan Your Celebration?</h3>
+                    <p class="whatsapp-text">
+                        Enquire about party hall availability, event dates, cake pre-orders, and eligible food discounts directly with our manager on WhatsApp.
+                    </p>
+                </div>
+                <div>
+                    <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                        <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================================
+         9. CONTACT & LOCATION SECTION (Verified Details & Google Maps)
+         ========================================================================= -->
+    <section class="section section-surface" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Find & Visit Us</span>
+                </div>
+                <h2 class="section-title">Location & Contact</h2>
+                <p class="section-subtitle">
+                    Conveniently located at The Souk in Swagathamad, Kottakkal. Drop in for a cup of coffee or tour our party hall in person!
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information Card -->
+                <div class="contact-card">
+                    <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.5rem;">
+                        <img src="assets/images/logo.png" alt="Cafe Coffea" style="width: 44px; height: 44px; object-fit: contain;">
+                        <div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--text-primary);">
+                                Cafe Coffea
+                            </h3>
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold);">
+                                Cups & Moments
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="contact-items-list">
+                        <!-- Address -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <div class="contact-item-title">Address</div>
+                                <div class="contact-item-val">Ground Floor, The Souk, Swagathamad, Kottakkal, Malappuram, Kerala 676510, India</div>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <div class="contact-item-title">Phone Number</div>
+                                <div class="contact-item-val">
+                                    <a href="tel:+918157022220" style="color: var(--color-gold-light);">
+                                        +91 81570 22220
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="contact-item">
+                            <div class="contact-icon" style="color: var(--color-whatsapp); background: rgba(37, 211, 102, 0.1);">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="contact-item-title">WhatsApp Booking</div>
+                                <div class="contact-item-val">
+                                    <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" style="color: var(--color-whatsapp);">
+                                        +91 81570 22220
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Official Website -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <div class="contact-item-title">Official Website</div>
+                                <div class="contact-item-val">
+                                    <a href="https://cafecoffea.in/" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold);">
+                                        https://cafecoffea.in/
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed / Direct Navigation -->
+                <div class="contact-card" style="padding: 0; overflow: hidden;">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Cafe+Coffea+The+Souk+Swagathamad+Kottakkal&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Cafe Coffea Kottakkal Location Map">
+                        </iframe>
+                    </div>
+                    <div style="padding: 1.25rem; display: flex; justify-content: space-between; align-items: center; background: var(--color-bg-surface-elevated);">
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">
+                            <i class="fas fa-directions text-gold" style="margin-right: 0.4rem;"></i> The Souk, Kottakkal
+                        </span>
+                        <a href="https://maps.google.com/?q=Cafe+Coffea+Kottakkal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                            <span>Open in Google Maps</span>
+                            <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================================
+         10. FOOTER
+         ========================================================================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <!-- Column 1: Brand Info -->
+                <div class="footer-brand-col">
+                    <a href="index.html" class="brand-link" style="margin-bottom: 0.5rem;">
+                        <img src="assets/images/logo.png" alt="Cafe Coffea" class="brand-logo-img">
+                        <div class="brand-text-block">
+                            <span class="brand-title">Cafe Coffea</span>
+                            <span class="brand-subtitle">Cups & Moments</span>
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc">
+                        Create beautiful memories with your friends and family in our welcoming, premium party space in Kottakkal.
+                    </p>
+                    <div style="margin-top: 1.25rem;">
+                        <a href="https://cafecoffea.in/" target="_blank" rel="noopener noreferrer" class="footer-official-badge">
+                            <i class="fas fa-globe"></i>
+                            <span>Visit Official Website: cafecoffea.in</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-links-col">
+                    <h4 class="footer-col-title">Explore</h4>
+                    <div class="footer-links-list">
+                        <a href="#gallery" class="footer-link">Photo Gallery</a>
+                        <a href="#videos" class="footer-link">Video Tour</a>
+                        <a href="#pricing" class="footer-link">Packages & Charges</a>
+                        <a href="#instructions" class="footer-link">Hall Rules & Policies</a>
+                        <a href="#contact" class="footer-link">Location & Direction</a>
+                    </div>
+                </div>
+
+                <!-- Column 3: Contact Details -->
+                <div class="footer-contact-col">
+                    <h4 class="footer-col-title">Connect</h4>
+                    <div class="footer-links-list">
+                        <div style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.5rem;">
+                            <i class="fas fa-map-marker-alt text-gold" style="margin-right: 0.4rem;"></i>
+                            Ground Floor, The Souk, Swagathamad, Kottakkal, Malappuram, Kerala 676510
+                        </div>
+                        <a href="tel:+918157022220" class="footer-link">
+                            <i class="fas fa-phone text-gold" style="margin-right: 0.4rem;"></i>
+                            +91 81570 22220
+                        </a>
+                        <a href="https://wa.me/918157022220?text=Hello%20Cafe%20Coffea!%20I%20would%20like%20to%20enquire%20about%20party%20hall%20booking%20at%20Cafe%20Coffea%20%E2%80%93%20Cups%20%26%20Moments." target="_blank" rel="noopener noreferrer" class="footer-link" style="color: var(--color-whatsapp);">
+                            <i class="fab fa-whatsapp" style="margin-right: 0.4rem;"></i>
+                            WhatsApp: +91 81570 22220
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 <strong>Cafe Coffea</strong> – Cups & Moments. All Rights Reserved.
+                </div>
+                <div>
+                    Designed for memorable celebrations and private gatherings.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

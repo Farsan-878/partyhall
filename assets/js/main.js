@@ -1,6 +1,7 @@
 /**
  * Cafe Coffea – Cups & Moments
  * Interactive Frontend JavaScript
+ * Mobile-First, Zero-Dependency, Vercel-Ready
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNav();
     initGalleryFilters();
     initLightbox();
+    initPricingCalculator();
     initVideoPlayer();
     initSmoothScroll();
 });
@@ -86,7 +88,7 @@ function initSmoothScroll() {
     });
 }
 
-// 4. Photo Gallery Filtering
+// 4. Photo Gallery Filtering (Clean display without promotional text between images)
 function initGalleryFilters() {
     const filterButtons = document.querySelectorAll('.gallery-filter-btn');
     const cards = document.querySelectorAll('.gallery-card');
@@ -104,7 +106,7 @@ function initGalleryFilters() {
                 const category = card.getAttribute('data-category');
                 if (filter === 'all' || category === filter) {
                     card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.4s ease forwards';
+                    card.style.animation = 'fadeIn 0.35s ease forwards';
                 } else {
                     card.style.display = 'none';
                 }
@@ -120,7 +122,6 @@ function initLightbox() {
 
     const cards = Array.from(document.querySelectorAll('.gallery-card'));
     const imgEl = lightbox.querySelector('.lightbox-img');
-    const captionEl = lightbox.querySelector('.lightbox-caption');
     const closeBtn = lightbox.querySelector('.lightbox-close');
     const prevBtn = lightbox.querySelector('.lightbox-prev');
     const nextBtn = lightbox.querySelector('.lightbox-next');
@@ -142,10 +143,8 @@ function initLightbox() {
         currentIndex = index;
         const currentCard = visibleCards[currentIndex];
         const fullSrc = currentCard.getAttribute('data-full');
-        const title = currentCard.getAttribute('data-title');
 
         imgEl.src = fullSrc;
-        captionEl.textContent = title || '';
     }
 
     cards.forEach(card => {
@@ -197,17 +196,50 @@ function initLightbox() {
     function handleSwipe() {
         const threshold = 50;
         if (touchEndX < touchStartX - threshold) {
-            // Swiped left -> next
             showImage(currentIndex + 1);
         }
         if (touchEndX > touchStartX + threshold) {
-            // Swiped right -> prev
             showImage(currentIndex - 1);
         }
     }
 }
 
-// 6. Video Gallery playback control
+// 6. Interactive Party Hall Booking Calculator
+// Rule: ₹1,000 per hour + ₹200 one-time cleaning fee per booking (applied only once!)
+function initPricingCalculator() {
+    const hourButtons = document.querySelectorAll('.calc-hour-btn');
+    const totalAmountEl = document.getElementById('calc-total-amount');
+    const totalSubEl = document.getElementById('calc-total-sub');
+    const whatsappBtn = document.getElementById('calc-whatsapp-btn');
+
+    if (!hourButtons.length || !totalAmountEl) return;
+
+    const hourlyRate = 1000;
+    const cleaningFee = 200; // Applied ONLY once per booking
+
+    hourButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            hourButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const hours = parseInt(btn.getAttribute('data-hours'), 10) || 1;
+            const hallRental = hours * hourlyRate;
+            const total = hallRental + cleaningFee;
+
+            totalAmountEl.textContent = '₹' + total.toLocaleString('en-IN');
+            totalSubEl.textContent = `${hours} Hour${hours > 1 ? 's' : ''} (₹${hallRental.toLocaleString('en-IN')}) + ₹200 one-time cleaning`;
+
+            // Update WhatsApp pre-filled text with selected hours and calculated price
+            if (whatsappBtn) {
+                const phone = '918157022220';
+                const msg = `Hello Cafe Coffea! I would like to book the Party Hall for ${hours} Hour${hours > 1 ? 's' : ''} (Total: ₹${total.toLocaleString('en-IN')}).%0A• Date: %0A• Time Slot: %0A• Guest Count: %0A• Occasion: %0A• Cake Pre-booking: `;
+                whatsappBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+            }
+        });
+    });
+}
+
+// 7. Video Gallery playback control
 function initVideoPlayer() {
     const videoCards = document.querySelectorAll('.video-card');
     videoCards.forEach(card => {
@@ -215,7 +247,6 @@ function initVideoPlayer() {
         if (!video) return;
 
         video.addEventListener('play', () => {
-            // Pause any other playing video on page
             document.querySelectorAll('video').forEach(v => {
                 if (v !== video && !v.paused) {
                     v.pause();
@@ -224,4 +255,3 @@ function initVideoPlayer() {
         });
     });
 }
-

@@ -1,95 +1,63 @@
 # Cafe Coffea – Cups & Moments
-## Premium Party Hall Website + Admin Dashboard
+## Official Party Hall Website (Static CDN / Vercel Architecture)
 
-A complete, mobile-first website and content management system for **Cafe Coffea – Cups & Moments** Party Hall in Kottakkal, Kerala.
+A fast, mobile-first, public-facing website for **Cafe Coffea – Cups & Moments** Party Hall in Kottakkal, Kerala.
 
 ---
 
 ### 🌐 Official Brand Reference
 - **Brand Name:** Cafe Coffea – Cups & Moments
 - **Official Website:** [https://cafecoffea.in/](https://cafecoffea.in/)
+- **Theme:** Official Dark Forest Green (`#081612`, `#0E241E`, `#132E27`) with Luxury Gold Accents (`#D4AF37`)
 - **Location:** Ground Floor, The Souk, Swagathamad, Kottakkal, Malappuram, Kerala 676510, India
-- **Contact:** +91 81570 22220
+- **Contact:** +91 81570 22220 | [Chat on WhatsApp](https://wa.me/918157022220)
 
 ---
 
-### 🚀 Running the Project Locally
+### 🚀 Key Features & Highlights
 
-#### Option A: Using XAMPP Apache (Recommended)
-1. Open the **XAMPP Control Panel**.
-2. Click **Start** next to **Apache**.
-3. Open your browser and navigate to:
-   - **Public Website:** `http://localhost/partyhall.1/`
-   - **Admin Dashboard:** `http://localhost/partyhall.1/admin/`
+1. **Dark Forest Green Visual Identity:**
+   - Accurate recreation of the authentic `cafecoffea.in` brand colors: Deep forest green, subtle gold badges, Playfair Display typography, and polished dark glassmorphism.
+   - Clean, customer-focused design with no admin overhead or database lag.
 
-#### Option B: Using PHP Built-in Server
-Open PowerShell or Command Prompt in this folder and run:
-```bash
-php -S localhost:8000
-```
-Then visit:
-- **Public Website:** `http://localhost:8000/`
-- **Admin Dashboard:** `http://localhost:8000/admin/`
+2. **Clean 18-Photo Gallery:**
+   - Real high-resolution party hall photographs without disruptive text overlays or between-image headings.
+   - Filter tabs: All Photos, Stage & Backdrop, Hall Interior, Seating & Dining, Ambiance & Decor.
+   - Fullscreen lightbox with touch swipe on mobile and keyboard navigation.
 
----
+3. **Replaced Video Showcase:**
+   - Features the two newest videos (`cafecoffe_hall_v2_reel.mp4` and `IMG_2079.MOV`).
+   - Custom posters, play overlay controls, responsive layout, and fullscreen support.
 
-### 🔐 Admin Dashboard Credentials
-- **Admin URL:** `/admin` (or `/admin/login.php`)
-- **Username:** `admin`
-- **Password:** `Coffea@2026!`
-*(You can change the password at any time from the Admin Dashboard > Settings)*
+4. **Transparent Packages & Charges:**
+   - **Party Hall Rental:** ₹1,000 per hour.
+   - **Cleaning Charge:** ₹200 per booking (one-time charge, applied only once regardless of the number of hours booked).
+   - Clear pricing examples (1 Hr = ₹1,200 | 2 Hrs = ₹2,200 | 3 Hrs = ₹3,200).
+   - Interactive live duration calculator.
 
----
+5. **Special Food Order Offer:**
+   - *"Enjoy 1 Hour of Party Hall FREE! When your eligible food orders at Cafe Coffea reach ₹5,000 or above, you receive 1 hour of party hall usage FREE."*
+   - Prominently highlighted with a dedicated gold badge and explanation.
 
-### 🌟 Features & Structure
+6. **Party Hall Rules & Policies:**
+   - Booking, punctuality, and extension rules.
+   - Decoration guidelines (wallpaper protection, approved tapes, damage assessments).
+   - Cake guidelines (in-house pre-booking, outside cakes allowed, food policy).
 
-1. **Homepage / Hero Section:**
-   - Full-width hero background using actual wide interior photograph of Cafe Coffea.
-   - Original Cafe Coffea gold monogram logo.
-   - Prominent heading: *"Cups & Moments"*
-   - Subheading: *"Celebrate Your Special Moments at Cafe Coffea."*
-   - Direct CTA buttons: *"Explore Our Party Hall"* & *"Enquire Now"*.
-
-2. **Quick Navigation:**
-   - 4 shortcut cards: **Gallery**, **Videos**, **Packages & Charges**, and **Instructions**.
-
-3. **Photo Gallery & Lightbox:**
-   - Scans and organizes actual café photographs across categories: Stage & Backdrop, Hall Interior, Seating & Dining, and Decor.
-   - Full-screen interactive lightbox with touch-swipe on mobile and keyboard arrow support.
-
-4. **Video Gallery:**
-   - Responsive HTML5 player showcasing walkthroughs and ambient tours (`IMG_1974.MOV`, `IMG_1981.MOV`).
-
-5. **Packages & Transparent Pricing:**
-   - Party Hall Charge: **₹1,000 / hour**
-   - Cleaning Charge: **₹200 / booking**
-   - Standard 1-Hour Total: **₹1,200**
-   - **Special Privilege Offer:** Reach **₹5,000** in Cafe Coffea purchases and receive **1 hour of party hall usage FREE**.
-   - All rates and thresholds are 100% editable from the Admin Dashboard.
-
-6. **Instructions & Policies:**
-   - Party Hall Rules (tariffs, punctuality, additional hours).
-   - Decoration Policy (wallpaper protection, damage prevention, safe methods).
-   - Cake Policy (Cafe Coffea cakes, outside cake allowance, food restrictions).
-
-7. **Direct WhatsApp Booking:**
-   - Pre-filled booking enquiry message template with date, time, guest count, occasion, and cake request.
-   - Floating WhatsApp button on mobile for quick access.
-
-8. **Admin Dashboard (`/admin`):**
-   - **Overview:** Instant metrics (photos, videos, tariffs, active hero preview).
-   - **Photo Manager:** Upload images (JPG, PNG, WEBP, HEIC), reorder, delete, and set hero image with one click.
-   - **Video Manager:** Upload videos, update titles, descriptions, and poster thumbnails.
-   - **Pricing Manager:** Edit hourly charge, cleaning fee, offer threshold, and free duration with live preview calculation.
-   - **Instructions Manager:** Add, edit, or delete policy rules across categories.
-   - **Contact Manager:** Edit WhatsApp number, phone, address, and Google Maps embed.
-   - **Settings:** Update headings, subheadings, pre-filled WhatsApp templates, and change admin password.
+7. **Direct WhatsApp Booking & Google Maps:**
+   - Instant WhatsApp enquiry with pre-filled message template.
+   - Embedded interactive Google Maps directions.
 
 ---
 
-### 📂 Technology Stack
-- **Backend:** PHP 8.2+
-- **Database:** SQLite 3 (stored at `data/database.sqlite`, zero manual configuration required)
-- **Frontend:** Vanilla HTML5, Mobile-First CSS3 (Custom Properties & Glassmorphism), Vanilla JavaScript
-- **Security:** Bcrypt password hashing, session regeneration, CSRF tokens, input sanitization.
+### ⚡ Deployment Architecture (Vercel Ready)
 
+- **Pure Static Architecture:** Zero PHP or SQLite dependencies. Fully compatible with Vercel's Edge CDN, GitHub Pages, Netlify, or any static hosting service.
+- **Instant Global Deployments:** 2–5 second deployment time, 100% uptime, zero cold starts.
+- **Configured `vercel.json`:**
+  ```json
+  {
+    "cleanUrls": true,
+    "trailingSlash": false
+  }
+  ```
